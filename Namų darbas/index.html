@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ND2</title>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <h1 class="title">Komandinio darbo tvarkaraščio sąsaja</h1>
+            <p class="author">Made by: Matas Matevičius EIRf-22</p>
+        </header>
+        <main>
+
+            <div class="kanban-board">
+                <div class="column" id="todo" ondragstart="drag(event)"
+                    ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <h2>To do</h2>
+                    <button class="add-task-button"
+                        onclick="openNewTaskPopup('todo')">
+                        <image src="icon-plus-circle-dark-grey.svg"></image>
+                    </button>
+                </div>
+                <div class="column" id="doing" ondragstart="drag(event)"
+                    ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <h2>Current</h2>
+                    <button class="add-task-button"
+                        onclick="openNewTaskPopup('doing')">
+                        <image src="icon-plus-circle-dark-grey.svg"></image>
+                    </button>
+                </div>
+                <div class="column" id="done" ondragstart="drag(event)"
+                    ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <h2>Done</h2>
+                    <button class="add-task-button"
+                        onclick="openNewTaskPopup('done')">
+                        <image src="icon-plus-circle-dark-grey.svg"></image>
+                    </button>
+                </div>
+                <div class="column" id="dropped" ondragstart="drag(event)"
+                    ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <h2>Dropped</h2>
+                    <button class="add-task-button"
+                        onclick="openNewTaskPopup('dropped')">
+                        <image src="icon-plus-circle-dark-grey.svg"></image>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Popup Form for Adding a New Task -->
+            <div class="popup-container" id="new-task-popup-container">
+                <div class="popup">
+                    <input type="text" id="new-task-name"
+                        placeholder="Title">
+                    <input type="textarea" id="new-task-description"
+                        placeholder="Description">
+                    <div class="popup-buttons">
+                        <button id="save-new-task-button" class="save-task-button">Save</button>
+                        <button onclick="closeNewTaskPopup()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Popup Form for Editing a Task -->
+            <div class="popup-container" id="edit-task-popup-container">
+                <div class="popup">
+                    <input type="text" id="edit-task-name"
+                        placeholder="Title">
+                    <input class="description" type="textarea" id="edit-task-description"
+                        placeholder="Description" size="30">
+                    <div class="popup-buttons">
+                        <button onclick="saveEditTask()">Save</button>
+                        <button onclick="closeEditTaskPopup()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+            <script src="script.js"></script>
+        </main>
+        <footer>
+            <p class="author">Vilniustech, 2023</p>
+        </footer>
+    </body>
+
+</html>

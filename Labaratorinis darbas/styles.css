@@ -1,0 +1,187 @@
+:root {
+    --clear: #00000000;
+    --white: #fafafa;
+    --gray: #909090;
+    --black: #202020;
+    --red: #ff5e5e;
+    --green: #00ff75;
+    --blue: #39dbff;
+    --yellow: #fff500;
+    --orange: #ffb443;
+    --purple: #cd76ea;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+p, span,
+h1, h2, h3 {
+    font-family: 'Bebas Neue';
+}
+
+header {
+    padding: 10px;
+    padding-left: 90px;
+    border-bottom: solid var(--black) 5px;
+}
+
+header,
+main,
+footer {
+    text-align: left;
+}
+
+header,
+footer {
+    margin: 0px;
+    background-color: var(--orange);
+    z-index: 1;
+}
+
+.title {
+    margin: 0px;
+    font-size: 60px;
+    color: var(--black);
+}
+
+.author {
+    margin: 0px;
+    padding-bottom: 10px;
+    font-size: 14px;
+    color: var(--black);
+}
+
+.cta-button {
+    text-decoration: none;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.math, .figure, .field {
+    display: flex;
+    flex: 1;
+}
+
+.field label{
+    padding-right: 10px;
+    width: 100px;
+    text-align: right;
+}
+
+.field input {
+    width: 157px;
+}
+
+input.grade {
+    width: 25px;
+}
+
+#results , #results p {
+    padding: 0px 20px;
+    margin: 0px 0px;
+    text-align: left;
+}
+
+.bad {
+    color: var(--red);
+}
+
+.good {
+    color: var(--orange);
+}
+
+.great {
+    color: var(--green);
+}
+
+button {
+    margin: 10px;
+    padding: 10px;
+    background-color: var(--black);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--gray);
+}
+
+.row {
+    margin: 10px;
+    padding: 10px 20px;
+    /* Adjusted padding for a slightly thinner row */
+    border: solid var(--black) 5px;
+    border-radius: 15px;
+    box-shadow: 8px 8px 0px 4px var(--black);
+    background-color: var(--white);
+    width: 50%;
+    min-width: 400px;
+    box-sizing: border-box;
+    overflow: hidden;
+    /* Hide overflow content */
+    transition: all 0.3s ease;
+    /* Added transition effect for all properties */
+    cursor: pointer;
+    /* Add pointer cursor to indicate interactivity */
+}
+
+.row h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+    /* Added spacing between title and content */
+}
+
+.row-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    /* Added transition effect for max-height */
+}
+
+.row-content p {
+    padding: 0px 20px;
+}
+
+.row.open {
+    padding: 20px;
+    /* Adjusted padding for an extended row */
+}
+
+.row.open .row-content {
+    max-height: 500px;
+    /* Adjust to a suitable max-height based on your content */
+}
+
+footer {
+    position: sticky;
+    bottom: 0px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    background-color: var(--orange);
+    border-top: solid var(--black) 5px;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+body.hide-footer footer {
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+}

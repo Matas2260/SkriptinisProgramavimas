@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="lt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Labaratotinis Dabas</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+            rel="stylesheet">
+        <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <h1 class="title">Hello, World!</h1>
+            <p class="author">- Matas Matevičius -</p>
+        </header>
+
+        <main>
+            <!-- Apie mane -->
+            <article class="row" onclick="toggleRowContent(this)">
+                <h2>Apie Mane</h2>
+                <div class="row-content">
+                    <p>Sveiki, aš esu Matas! Norintis tapti debesų ir DevOps
+                        profesionalu su aistra sprendžiant sudėtingus
+                        uždavinius.</p>
+                    <p>Keliaukite kartu su manimi ir atraskite, kaip galiu
+                        prisidėti prie jūsų projektų.</p>
+                    <p>Kaip tikras buvęs DevOps inžinierius „XYZ Corp“,
+                        sėkmingai valdžiau CI/CD sistemą, padidindamas komandos
+                        produktyvumą 2'000'000%. :O</p>
+                </div>
+            </article>
+
+            <!-- Įgūdžiai -->
+            <article class="row" onclick="toggleRowContent(this)">
+                <h2>Darbo Įgūdžiai (kurių noriu turėti, vieną dieną...)</h2>
+                <div class="row-content">
+                    <p>AWS - Advanced Certified Cloud Practitioner</p>
+                    <p>Microsoft Azure - Azure Fundamentals</p>
+                    <p>Google Cloud Platform - Associate Cloud Engineer</p>
+                    <p>Kubernetes - Certified Kubernetes Administrator
+                        (CKA)</p>
+                    <p>Terraform - Terraform Associate</p>
+                    <p>Git - Git Professional</p>
+                    <p>Jenkins - Jenkins Professional</p>
+                    <p>Docker - Docker Professional</p>
+                    <p>CI/CD - GitLab CI/CD Specialist</p>
+                </div>
+            </article>
+
+            <!-- Įdomūs faktai -->
+            <article class="row" onclick="toggleRowContent(this)">
+                <h2>Įdomūs Faktai</h2>
+                <div class="row-content">
+                    <ul>
+                        <li>Aš mėgstu sportuoti, važinėti dviračiu ir plaukioti.</li>
+                        <li>Mėgstu žaisti krepšinį, tinklinį bei futbolą.
+                            Mokykloje žaidžiau varsity krepšinį ir buvau savo
+                            komandos geriausias bombardyras.</li>
+                        <li>Turiu gilų susidomėjimą kvantinės fizikos ir
+                            informatikos srityje. Dažnai tyrinėju naujausius šių
+                            sričių tyrimus, kad būčiau informuotas apie
+                            naujausius įvykius.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Matematika -->
+            <article class="row" onclick="toggleRowContent(this)">
+                <h2>MathJax</h2>
+                <div class="row-content">
+                    <div class="math">
+                        \[
+                        f(z) = \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(z-a)
+                        \]
+                    </div>
+                </div>
+            </article>
+
+            <!-- Figūra -->
+            <article class="row" onclick="toggleRowContent(this)">
+                <h2>SVG</h2>
+                <div class="row-content">
+                    <div class="figure">
+                        <svg viewBox="0 0 24 24" width="128" height="128"><path
+                                fill="none"
+                                stroke="currentColor" stroke-width="1.5"
+                                d="M18.31 10.5c-1.41-1.98-3.71-3.26-6.32-3.26 -2.61 0-4.91 1.28-6.32 3.25m12.62 0l1.77-2.6c-1.98-2.25-4.87-3.67-8.09-3.67 -3.23 0-6.12 1.41-8.09 3.66l1.77 2.59m12.62 0l-6.32 9.24 -6.32-9.25"></path></svg>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Skaičiuoti -->
+            <article class="row" onclick="toggleRowContent(this)">
+                <h2>Skaičiuoti</h2>
+                <div class="row-content">
+                    <p></p>
+                    <div class="calc">
+                        <form id="calculate">
+                            <div class="field">
+                                <label for="name">Vardas:</label>
+                                <input type="text" id="fname" name="fname"><br>
+                            </div>
+                            <div class="field">
+                                <label for="surname">Pavardė:</label>
+                                <input type="text" id="surname" name="surname"><br>
+                            </div>
+                            <div class="field">
+                                <label for="code">Studento kodas:</label>
+                                <input type="text" id="code" name="code"><br>
+                            </div>
+                            <div class="field">
+                                <label for="code">Studento pažymiai:</label>
+                                <input class="grade" type="text" id="g1"
+                                    name="g1">
+                                <input class="grade" type="text" id="g2"
+                                    name="g2">
+                                <input class="grade" type="text" id="g3"
+                                    name="g3">
+                                <input class="grade" type="text" id="g4"
+                                    name="g4">
+                                <input class="grade" type="text" id="g5"
+                                    name="g5">
+                            </div>
+                            <button type="button" onclick="saveUserData()">Skaičiuoti</button>
+                            <div id="results"></div>
+                        </form>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Susisiek su manimi -->
+            <article class="row" onclick="toggleRowContent(this)">
+                <h2>Susisiek su manimi</h2>
+                <div class="row-content">
+                    <p>Pasiruošęs bendradarbiauti? Drąsiai susisiek su manimi
+                        dėl užklausų, galimybių arba tiesiog pasakyti sveiki!</p>
+                    <div class="social-icons" style="padding: 0px 20px;">
+                        <a href="mailto:matas.matevicius@stud.vilniustech.lt"
+                            class="cta-button">
+                            <img src="svg/email-icon.svg" alt="El. paštas"
+                                width="24" height="24">
+                        </a>
+                        <a href="https://linkedin.com" target="_blank"
+                            class="cta-button">
+                            <img src="svg/linkedin-icon.svg" alt="LinkedIn"
+                                width="24" height="24">
+                        </a>
+                        <a href="https://github.com" target="_blank"
+                            class="cta-button">
+                            <img src="svg/github-icon.svg" alt="GitHub"
+                                width="24" height="24">
+                        </a>
+                        <a href="https://twitter.com" target="_blank"
+                            class="cta-button">
+                            <img src="svg/twitter-icon.svg" alt="Twitter"
+                                width="24" height="24">
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank"
+                            class="cta-button">
+                            <img src="svg/facebook-icon.svg" alt="Facebook"
+                                width="24" height="24">
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </main>
+
+        <div style="padding: 100px 0px;"></div>
+
+        <footer>
+            <p>&copy; 2023 Matas Matevičius. Visos teisės saugomos.</p>
+            <div class="social-icons" style="align-content: center;">
+                <a href="mailto:matas.matevicius@stud.vilniustech.lt"
+                    class="cta-button">
+                    <img src="svg/email-icon.svg" alt="El. paštas" width="24"
+                        height="24">
+                </a>
+                <a href="https://linkedin.com" target="_blank"
+                    class="cta-button">
+                    <img src="svg/linkedin-icon.svg" alt="LinkedIn" width="24"
+                        height="24">
+                </a>
+                <a href="https://github.com" target="_blank" class="cta-button">
+                    <img src="svg/github-icon.svg" alt="GitHub" width="24"
+                        height="24">
+                </a>
+                <a href="https://twitter.com" target="_blank" class="cta-button">
+                    <img src="svg/twitter-icon.svg" alt="Twitter" width="24"
+                        height="24">
+                </a>
+                <a href="https://www.facebook.com" target="_blank"
+                    class="cta-button">
+                    <img src="svg/facebook-icon.svg" alt="Facebook" width="24"
+                        height="24">
+                </a>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,282 @@
+:root {
+    --clear: #00000000;
+    --fog: #00000077;
+    --white: #fafafa;
+    --gray: #909090;
+    --black: #202020;
+    --red: #ff5e5e;
+    --green: #00ff75;
+    --blue: #39dbff;
+    --yellow: #fff500;
+    --orange: #ffb443;
+    --purple: #cd76ea;
+}
+
+#todo {
+    background-color: var(--yellow);
+}
+#doing {
+    background-color: var(--blue);
+}
+#done {
+    background-color: var(--green);
+}
+#dropped {
+    background-color: var(--red);
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    background-color: var(--white);
+}
+
+p, input, button {
+    font-family: 'Oswald', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bebas Neue';
+}
+
+header {
+    margin: 0px;
+    padding: 20px;
+    text-justify: center;
+    text-align: center;
+    background-color: var(--orange);
+    border-bottom: solid var(--black) 5px;
+    z-index: 1;
+}
+
+main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: stretch;
+    margin: 0;
+    background-color: var(--white);
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 0px;
+    padding: 20px;
+    text-justify: center;
+    text-align: center;
+    background-color: var(--orange);
+    border-top: solid var(--black) 5px;
+    z-index: 1;
+}
+
+.title {
+    margin: 0px;
+    font-size: 60px;
+    color: var(--black);
+}
+
+.author {
+    margin: 0px;
+    padding-bottom: 10px;
+    font-size: 14px;
+    color: var(--black);
+}
+
+.kanban-board {
+    display: flex;
+    width: 100%;
+    height: 150%;
+    /* Adjust the width as needed */
+    padding: 20px 0px;
+    margin: 20px 20px;
+}
+
+.column {
+    flex: 1;
+    position: relative;
+    margin: 10px;
+    padding: 20px;
+    align-items: flex-start;
+    border-color: var(--black);
+    border-radius: 15px;
+    box-shadow: 8px 8px 0px 4px var(--black);
+    background-color: var(--white);
+    min-width: 250px;
+    height: 80%;
+    max-height: 500px;
+    box-sizing: border-box;
+    overflow-y: auto;
+        /* Enable vertical scrollbar */
+}
+
+.column h2 {
+    position: relative;
+    width: 70%;
+    top: 0;
+    margin-top: 5px;
+    padding-left: 10px;
+    font-size: 26px;
+    text-align: left;
+    z-index: 1;
+}
+
+.add-task-button {
+    position: absolute;
+    margin: 0px;
+    padding: 5px;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--clear);
+    background-image: var(--plus_icon);
+    color: var(--black);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.task {
+    position: relative;
+    
+    margin: 0 0 20px 0;
+    padding: 10px;
+    border: 1px solid var(--gray);
+    background-color: var(--white);
+    cursor: grab;
+    word-wrap: break-word;
+    
+    text-align: left;
+    font-size: 16px;
+}
+
+.task:hover {
+    background-color: var(--white);
+}
+
+.task-buttons {
+    display: flex;
+}
+
+.task-buttons button {
+    flex: 1;
+    margin-left: 5px;
+    background-color: var(--black);
+    color: var(--white);
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.droppable {
+    border: 2px dashed var(--white);
+    min-height: 50px;
+    padding: 20px;
+    /* Increase padding for a larger droppable area */
+    border-radius: 15px;
+    background-color: var(--white);
+}
+
+button {
+    margin: 10px;
+    padding: 10px;
+    background-color: var(--black);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--gray);
+}
+
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--fog);
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.popup {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px var(--fog);
+}
+
+.popup label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.popup input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.popup input .description {
+    max-lines: 10;
+}
+
+.popup textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.popup-buttons {
+    display: flex;
+    margin: 0px;
+}
+
+.popup button {
+    flex: 1;
+    margin: 10px;
+    padding: 10px;
+    background-color: var(--black);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup button:hover {
+    background-color:var(--gray);
+}
+
+/* Popup Form Error Styling */
+.popup-form-error {
+    color: var(--red);
+    margin-top: 5px;
+}
+
+/* Mobile Responsiveness */
+@media only screen and (max-width: 1000px) {
+    .kanban-board {
+        flex-direction: column;
+        align-items: stretch;
+        margin-right: 40px;
+        margin-bottom: 40px;
+    }
+
+    .column {
+        min-width: 100%;
+    }
+    
+    footer {
+        visibility: hidden;
+    }
+}
